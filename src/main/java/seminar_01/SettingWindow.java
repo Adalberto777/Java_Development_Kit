@@ -21,6 +21,10 @@ public class SettingWindow extends JFrame {
     JLabel fieldSize;
     JLabel currentFieldSize;
     JSlider sliderFieldSize;
+    JLabel winSize;
+    JLabel currentWinSize;
+    JSlider sliderWinSize;
+
 
     SettingWindow(GameWindow gameWindow){
         human = new JRadioButton("HUMAN VS HUMAN");
@@ -29,12 +33,15 @@ public class SettingWindow extends JFrame {
         buttonGroup.add(human);
         buttonGroup.add(ai);
         btnStart = new JButton("Start new game");
-        panMain = new JPanel(new GridLayout(7, 1));
+        panMain = new JPanel(new GridLayout(9, 1));
         fieldSize = new JLabel("Choice the size of panel");
         choiceHA = new JLabel("Choice player");
         currentFieldSize = new JLabel("Current field size");
         panMain.add(choiceHA);
         sliderFieldSize = new JSlider(3, 10, 3);
+        currentWinSize = new JLabel("Set length");
+        winSize = new JLabel("Choice length for win");
+        sliderFieldSize = new JSlider(3,10,3);
 
         setLocationRelativeTo(gameWindow);
         setSize(WIDTH, HEIGHT);
@@ -50,6 +57,9 @@ public class SettingWindow extends JFrame {
         panMain.add(ai);
         panMain.add(fieldSize);
         panMain.add(currentFieldSize);
+        panMain.add(sliderFieldSize);
+        panMain.add(currentWinSize);
+        panMain.add(winSize);
         panMain.add(sliderFieldSize);
         add(panMain);
         add(btnStart, BorderLayout.SOUTH);
